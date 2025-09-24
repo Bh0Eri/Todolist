@@ -15,10 +15,17 @@ public class Controller {
     UsuarioRepositorio user;
 
     @GetMapping
+    public ToDolist save(){
+        ToDolist toDolist = new  ToDolist("Eric","19","eric@gmail.com");
+        return user.save(toDolist);
+    }
+
+    @GetMapping("show")
     public List<ToDolist> show(){
         List<ToDolist> usuario = user.findAll();
         return usuario;
     }
+
 
 
 
